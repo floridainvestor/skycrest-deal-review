@@ -9,528 +9,383 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── PAGE SHELL ── */
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(170deg, #fffdf0 0%, #fff9e0 45%, #eef8ff 100%);
-      color: #1a1a1a;
+      background: #e8eff5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
       min-height: 100vh;
     }
 
-    /* ── TOP BAR ── */
-    .top-bar {
-      background: linear-gradient(90deg, #e07b2b 0%, #f5a623 100%);
-      color: #fff;
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    .flyer {
+      width: 8.5in;
+      min-height: 11in;
+      background: #fffdf0;
+      border-radius: 4px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(140deg, #1a6fa8 0%, #1e8bbf 55%, #43c0d8 100%);
+    /* ── HEADER BAND ── */
+    .header {
+      background: linear-gradient(135deg, #1a6fa8 0%, #2196c4 60%, #43c0d8 100%);
+      padding: 22px 32px 18px;
       color: #fff;
-      padding: 60px 24px 52px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0; right: 0;
-      height: 40px;
-      background: linear-gradient(170deg, #fffdf0 0%, #fff9e0 100%);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .badge {
+    .header-left {}
+    .header-badge {
       display: inline-block;
       background: #f5a623;
       color: #fff;
-      font-size: 0.72rem;
+      font-size: 0.6rem;
       font-weight: 800;
       letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 20px;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 900;
-      line-height: 1.12;
-      max-width: 720px;
-      margin: 0 auto 16px;
-    }
-    .hero h1 span { color: #ffd166; }
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      opacity: 0.92;
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.55;
-    }
-
-    /* ── PAGE BODY ── */
-    .page {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 20px 70px;
-    }
-
-    /* ── EMPATHY OPENER ── */
-    .opener {
-      background: #fff;
-      border-left: 5px solid #f5a623;
-      border-radius: 0 14px 14px 0;
-      padding: 30px 30px 30px 34px;
-      margin: 48px 0 36px;
-      box-shadow: 0 3px 20px rgba(0,0,0,0.07);
-    }
-    .opener p {
-      font-size: 1.15rem;
-      line-height: 1.78;
-      color: #1a1a1a;
-      margin-bottom: 14px;
-    }
-    .opener p:last-child { margin-bottom: 0; }
-    .opener .big-line {
-      font-size: 1.18rem;
-      font-weight: 800;
-      color: #1a6fa8;
-      line-height: 1.4;
-    }
-
-    /* ── SECTION HEADERS ── */
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #e07b2b;
-      margin-bottom: 6px;
-    }
-    h2 {
-      font-size: clamp(1.2rem, 3vw, 1.65rem);
-      font-weight: 900;
-      color: #1a1a1a;
-      line-height: 1.25;
-      margin-bottom: 18px;
-    }
-
-    /* ── LOTS GRID ── */
-    .lots-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin: 24px 0 28px;
-    }
-    @media (max-width: 520px) { .lots-grid { grid-template-columns: 1fr; } }
-    .lot-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 24px 22px;
-      box-shadow: 0 3px 18px rgba(0,0,0,0.08);
-      border-top: 4px solid #1a6fa8;
-    }
-    .lot-card .lot-num {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #1a6fa8;
-      margin-bottom: 6px;
-    }
-    .lot-card .lot-price {
-      font-size: 1.7rem;
-      font-weight: 900;
-      color: #1a1a1a;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .lot-card p { font-size: 0.9rem; color: #555; line-height: 1.55; }
-    .lot-card .status {
-      display: inline-block;
-      background: #fff3e0;
-      color: #e07b2b;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 20px;
-      margin-top: 10px;
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+    .header h1 span { color: #ffd166; }
+    .header .tagline { font-size: 0.82rem; opacity: 0.88; line-height: 1.45; max-width: 340px; }
+    .header-right { text-align: right; flex-shrink: 0; }
+    .header-right .price-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; margin-bottom: 3px; }
+    .header-right .price { font-size: 1.6rem; font-weight: 900; color: #ffd166; line-height: 1; }
+    .header-right .price-sub { font-size: 0.72rem; opacity: 0.8; margin-top: 3px; }
+
+    /* ── ORANGE STRIPE ── */
+    .stripe {
+      background: linear-gradient(90deg, #e07b2b, #f5a623);
+      padding: 7px 32px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .stripe-item { color: #fff; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+    .stripe-item::before { content: '✓'; font-weight: 900; }
+
+    /* ── BODY ── */
+    .body { padding: 18px 32px 0; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+
+    /* ── EMPATHY ── */
+    .empathy {
+      background: #fff;
+      border-left: 4px solid #f5a623;
+      border-radius: 0 8px 8px 0;
+      padding: 13px 16px 13px 18px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .empathy p { font-size: 0.82rem; line-height: 1.65; color: #222; margin-bottom: 6px; }
+    .empathy p:last-child { margin-bottom: 0; }
+    .empathy .big { font-size: 0.88rem; font-weight: 800; color: #1a6fa8; }
+
+    /* ── TWO-COL ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ── LOT CARDS ── */
+    .lot-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      border-top: 3px solid #1a6fa8;
+    }
+    .lot-card .lot-tag { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #1a6fa8; margin-bottom: 3px; }
+    .lot-card .lot-price { font-size: 1.35rem; font-weight: 900; color: #1a1a1a; line-height: 1; margin-bottom: 5px; }
+    .lot-card .lot-math { font-size: 0.72rem; color: #444; line-height: 1.6; }
+    .lot-card .lot-profit { font-size: 0.82rem; font-weight: 800; color: #2e9e5e; margin-top: 5px; }
+    .lot-card .lot-pill {
+      display: inline-block; background: #fff3e0; color: #e07b2b;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 2px 7px; border-radius: 10px; margin-top: 6px;
     }
 
-    /* ── NUMBERS TABLE ── */
-    .numbers-section {
+    /* ── NUMBERS ── */
+    .numbers {
       background: #fff;
-      border-radius: 14px;
-      padding: 30px 28px;
-      margin: 28px 0;
-      box-shadow: 0 3px 18px rgba(0,0,0,0.07);
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
     }
-    .profit-block { margin-bottom: 28px; }
-    .profit-block:last-of-type { margin-bottom: 0; }
-    .profit-block h3 {
-      font-size: 1rem;
-      font-weight: 800;
+    .numbers .sec-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #e07b2b; margin-bottom: 4px; }
+    .num-row { display: flex; justify-content: space-between; font-size: 0.75rem; padding: 4px 0; border-bottom: 1px solid #f0f0f0; color: #333; }
+    .num-row:last-child { border-bottom: none; }
+    .num-row .val { font-weight: 700; }
+    .num-row.total { border-top: 1.5px solid #1a6fa8; border-bottom: none; margin-top: 2px; padding-top: 6px; }
+    .num-row.total .val { color: #1a6fa8; font-size: 0.85rem; }
+    .both-banner {
+      background: linear-gradient(90deg, #1a6fa8, #2196c4);
+      border-radius: 6px; padding: 8px 14px;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 8px; color: #fff;
+    }
+    .both-banner .lbl { font-size: 0.68rem; opacity: 0.85; }
+    .both-banner .val { font-size: 1rem; font-weight: 900; }
+
+    /* ── THE PLAY ── */
+    .play {
+      background: #fff;
+      border-radius: 8px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+      border-top: 3px solid #e07b2b;
+    }
+    .play .sec-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #e07b2b; margin-bottom: 8px; }
+    .steps { display: flex; flex-direction: column; gap: 6px; }
+    .step { display: flex; gap: 10px; align-items: flex-start; }
+    .step-n {
+      width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, #e07b2b, #f5a623);
+      color: #fff; font-weight: 900; font-size: 0.7rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-t { font-size: 0.75rem; color: #222; line-height: 1.45; padding-top: 2px; }
+    .step-t strong { font-weight: 800; }
+
+    /* ── BOTTOM ROW ── */
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    /* ── WHY IT WORKS ── */
+    .why {
+      background: #fff;
+      border-radius: 8px; padding: 14px 16px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.07);
+    }
+    .why .sec-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #e07b2b; margin-bottom: 8px; }
+    .why-item { display: flex; gap: 8px; margin-bottom: 7px; }
+    .why-item:last-child { margin-bottom: 0; }
+    .why-dot { width: 6px; height: 6px; min-width: 6px; border-radius: 50%; background: #f5a623; margin-top: 5px; }
+    .why-text { font-size: 0.73rem; color: #333; line-height: 1.5; }
+    .why-text strong { color: #1a1a1a; }
+
+    /* ── RISK REVERSAL ── */
+    .risk {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 8px; padding: 14px 16px;
+    }
+    .risk .sec-label { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #16a34a; margin-bottom: 6px; }
+    .risk p { font-size: 0.73rem; color: #333; line-height: 1.55; }
+
+    /* ── MANTRA ── */
+    .mantra-strip {
+      background: linear-gradient(90deg, #fffbf0, #fff8e6);
+      border-top: 1px solid #fde68a;
+      border-bottom: 1px solid #fde68a;
+      padding: 10px 32px;
+      text-align: center;
+    }
+    .mantra-strip p {
+      font-size: 0.88rem;
+      font-weight: 900;
       color: #1a6fa8;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+      line-height: 1.5;
     }
-    .profit-row {
+    .mantra-strip .sub { font-size: 0.75rem; font-weight: 600; color: #555; margin-top: 2px; }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      background: linear-gradient(135deg, #1a6fa8 0%, #2196c4 100%);
+      padding: 16px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 9px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.95rem;
-      color: #333;
-    }
-    .profit-row:last-child { border-bottom: none; }
-    .profit-row .label { font-weight: 500; }
-    .profit-row .value { font-weight: 700; color: #1a1a1a; }
-    .profit-row.total {
-      margin-top: 4px;
-      padding-top: 14px;
-      border-top: 2px solid #1a6fa8;
-      border-bottom: none;
-    }
-    .profit-row.total .label { font-weight: 800; font-size: 1rem; }
-    .profit-row.total .value { font-size: 1.15rem; color: #1a6fa8; }
-    .both-total {
-      background: linear-gradient(135deg, #1a6fa8, #2196c4);
-      color: #fff;
-      border-radius: 10px;
-      padding: 18px 22px;
-      margin-top: 24px;
-      text-align: center;
-    }
-    .both-total .label { font-size: 0.85rem; opacity: 0.85; margin-bottom: 4px; }
-    .both-total .value { font-size: 1.6rem; font-weight: 900; }
-    .both-total .sub { font-size: 0.85rem; opacity: 0.85; margin-top: 4px; }
-
-    /* ── PILLARS ── */
-    .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
-    @media (max-width: 520px) { .pillars { grid-template-columns: 1fr; } }
-    .pillar {
-      background: #fff;
-      border-radius: 12px;
-      padding: 22px 20px;
-      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
-    }
-    .pillar-icon { font-size: 1.5rem; margin-bottom: 10px; }
-    .pillar h3 { font-size: 0.85rem; font-weight: 800; color: #1a6fa8; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 7px; }
-    .pillar p { font-size: 0.9rem; color: #444; line-height: 1.55; }
-
-    /* ── THE PLAY ── */
-    .play-section {
-      background: #fff;
-      border-radius: 14px;
-      padding: 32px 28px;
-      margin: 28px 0;
-      box-shadow: 0 3px 18px rgba(0,0,0,0.07);
-      border-top: 4px solid #e07b2b;
-    }
-    .play-section h2 { color: #e07b2b; }
-    .step { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 20px; }
-    .step:last-child { margin-bottom: 0; }
-    .step-num {
-      width: 38px; height: 38px; min-width: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #e07b2b, #f5a623);
-      color: #fff;
-      font-weight: 900;
-      font-size: 1rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .step-text h4 { font-size: 1rem; font-weight: 800; margin-bottom: 3px; color: #1a1a1a; }
-    .step-text p { font-size: 0.9rem; color: #555; line-height: 1.5; }
-
-    /* ── RISK REVERSAL ── */
-    .risk-reversal {
-      background: linear-gradient(135deg, #f0fdf4, #e8fbf0);
-      border: 1.5px solid #86efac;
-      border-radius: 12px;
-      padding: 22px 24px;
-      margin: 28px 0;
-      display: flex;
       gap: 16px;
-      align-items: flex-start;
-    }
-    .risk-icon { font-size: 1.8rem; line-height: 1; }
-    .risk-text h3 { font-size: 1rem; font-weight: 800; color: #16a34a; margin-bottom: 6px; }
-    .risk-text p { font-size: 0.95rem; color: #333; line-height: 1.6; }
-
-    /* ── SIGN-OFF ── */
-    .sign-off {
-      background: #fff;
-      border-radius: 14px;
-      padding: 30px 28px;
-      margin: 28px 0;
-      box-shadow: 0 3px 18px rgba(0,0,0,0.07);
-      text-align: center;
-    }
-    .sign-off .mantra {
-      font-size: clamp(1.1rem, 3vw, 1.45rem);
-      font-weight: 900;
-      color: #1a6fa8;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-    .sign-off .closer {
-      font-size: 1.05rem;
-      color: #444;
-      line-height: 1.65;
-    }
-
-    /* ── CTA ── */
-    .cta-section {
-      background: linear-gradient(135deg, #1a6fa8 0%, #2196c4 100%);
-      border-radius: 18px;
-      padding: 40px 28px;
-      text-align: center;
-      margin: 28px 0;
-      color: #fff;
-      box-shadow: 0 6px 32px rgba(26,111,168,0.3);
-    }
-    .cta-section .cta-label {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 10px;
-    }
-    .cta-section .cta-headline {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-    .cta-section .cta-sub {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 28px;
-    }
-    .cta-phones { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-    .cta-phone {
-      background: #fff;
-      color: #1a6fa8;
-      border-radius: 10px;
-      padding: 14px 24px;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      min-width: 180px;
-    }
-    .cta-phone .contact-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
-    .cta-phone .contact-num { font-size: 1.3rem; font-weight: 900; }
-    .cta-phone .contact-name { font-size: 0.8rem; font-weight: 600; opacity: 0.8; }
-    .cta-address {
-      font-size: 0.88rem;
-      opacity: 0.75;
-      line-height: 1.5;
-    }
-
-    /* ── BACK LINK ── */
-    .back-link { text-align: center; margin-top: 32px; }
-    .back-link a {
-      color: #1a6fa8;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      opacity: 0.7;
-    }
-    .back-link a:hover { opacity: 1; }
-
-    /* ── LOCATION BADGE ── */
-    .location-strip {
-      background: #fff;
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin: 0 0 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      display: flex;
-      gap: 24px;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
     }
-    .loc-item { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600; color: #333; }
-    .loc-item .loc-icon { font-size: 1.1rem; }
+    .footer-cta .cta-left {}
+    .footer-cta .cta-headline { font-size: 0.88rem; font-weight: 900; color: #fff; margin-bottom: 2px; }
+    .footer-cta .cta-sub { font-size: 0.68rem; color: rgba(255,255,255,0.75); }
+    .footer-phones { display: flex; gap: 12px; flex-wrap: wrap; }
+    .footer-phone {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px; padding: 8px 14px; text-align: center;
+    }
+    .footer-phone .who { font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); margin-bottom: 2px; }
+    .footer-phone a { font-size: 0.95rem; font-weight: 900; color: #ffd166; text-decoration: none; display: block; }
+    .footer-addr { font-size: 0.62rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    /* ── LOCATION PILLS ── */
+    .loc-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .loc-pill {
+      background: #e3f2fd; color: #1a6fa8;
+      font-size: 0.62rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: none; padding: 0; }
+      .flyer { box-shadow: none; border-radius: 0; width: 100%; min-height: auto; page-break-after: avoid; }
+      @page { size: letter; margin: 0; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      body { padding: 0; }
+      .flyer { width: 100%; border-radius: 0; box-shadow: none; }
+      .header { flex-direction: column; align-items: flex-start; }
+      .header-right { text-align: left; }
+      .two-col, .bottom-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
+<div class="flyer">
 
-  <div class="top-bar">🔨 Roofers &amp; Contractors Special — Lots 22 &amp; 92 — 14-Day Close — No Bank</div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="badge">Investment Opportunity · Sanford, FL</div>
-    <h1>Two Bad Roofs.<br><span>Your Skills. Your Profit.</span></h1>
-    <p class="hero-sub">Two mobile homes priced cheap because of one fixable problem. For roofers, the problem is the deal.</p>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-badge">Roofers &amp; Contractors Special</div>
+      <h1>Two Bad Roofs.<br><span>Your Skills. Your Profit.</span></h1>
+      <p class="tagline">Two mobile homes priced cheap because of one fixable problem.<br>For roofers, the problem <em>is</em> the deal.</p>
+    </div>
+    <div class="header-right">
+      <div class="price-label">Starting at</div>
+      <div class="price">$5,000</div>
+      <div class="price-sub">Owner financing · 14-day close</div>
+      <div style="margin-top:10px;">
+        <div class="loc-pills">
+          <div class="loc-pill" style="background:rgba(255,255,255,0.15);color:#fff;">📍 Sanford, FL</div>
+          <div class="loc-pill" style="background:rgba(255,255,255,0.15);color:#fff;">🏫 #1 Schools FL</div>
+          <div class="loc-pill" style="background:rgba(255,255,255,0.15);color:#fff;">🌊 1.5mi River</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="page">
+  <!-- ORANGE STRIPE -->
+  <div class="stripe">
+    <div class="stripe-item">No Bank</div>
+    <div class="stripe-item">No Credit Check</div>
+    <div class="stripe-item">14-Day Close</div>
+    <div class="stripe-item">As-Is / Walk First</div>
+    <div class="stripe-item">No Obligation</div>
+  </div>
 
-    <!-- EMPATHY OPENER -->
-    <div class="opener">
-      <p>You've spent years fixing roofs that made other people rich. These two are yours.</p>
-      <p>I'm not selling you a roofing job. I'm selling you the house.</p>
-      <p>Here's the part nobody says out loud: every roof you fix, the homeowner sells that house six months later and pockets the $8K in equity you created. You get a check. They get the wealth.</p>
-      <p class="big-line">Roofers don't get rich fixing roofs for paychecks.<br>They get rich fixing roofs they own.</p>
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- EMPATHY -->
+    <div class="empathy">
+      <p>You've spent years fixing roofs that made other people rich. These two are yours. Every roof you fix, the homeowner sells six months later and pockets the $8K equity <em>you</em> created. You get a check. They get the wealth.</p>
+      <p class="big">Roofers don't get rich fixing roofs for paychecks. They get rich fixing roofs they own.</p>
     </div>
 
-    <!-- LOTS -->
-    <div class="section-label">The Properties</div>
-    <h2>Cheap Because the Roof Is Bad</h2>
-    <p style="color:#444; line-height:1.65; margin-bottom:20px;">Two mobile homes. Both have one problem — the roof. That's why they're priced this low. That's why they're perfect for you. Everyone else runs from the roof. You fix them for a living.</p>
-
-    <div class="lots-grid">
+    <!-- TWO LOTS -->
+    <div class="two-col">
       <div class="lot-card">
-        <div class="lot-num">Lot 22</div>
+        <div class="lot-tag">Lot 22</div>
         <div class="lot-price">$5,000–$6,000</div>
-        <p>Bad roof. Everything else solid. Owner financing available. 14-day close.</p>
-        <div class="status">As-Is · No Age Restriction</div>
+        <div class="lot-math">
+          Fix roof: ~$1,500 materials · 2–3 days<br>
+          Sell: $15K–$18K · Seminole market
+        </div>
+        <div class="lot-profit">Profit: $8,500–$11,500</div>
+        <div class="lot-pill">As-Is · No Age Restriction</div>
       </div>
       <div class="lot-card">
-        <div class="lot-num">Lot 92</div>
+        <div class="lot-tag">Lot 92</div>
         <div class="lot-price">$6,000–$8,000</div>
-        <p>Bad roof. Everything else solid. Owner financing available. 14-day close.</p>
-        <div class="status">As-Is · No Age Restriction</div>
+        <div class="lot-math">
+          Fix roof: ~$2,000 materials · 2–3 days<br>
+          Sell: $16K–$19K · Seminole market
+        </div>
+        <div class="lot-profit">Profit: $7,000–$10,000</div>
+        <div class="lot-pill">As-Is · No Age Restriction</div>
       </div>
     </div>
 
-    <div class="location-strip">
-      <div class="loc-item"><span class="loc-icon">📍</span> 2545 Park Drive, Sanford FL 32771</div>
-      <div class="loc-item"><span class="loc-icon">🏫</span> Seminole County — #1 School District in Florida</div>
-      <div class="loc-item"><span class="loc-icon">🌊</span> 1.5 miles from St. Johns River</div>
+    <!-- NUMBERS + PLAY -->
+    <div class="two-col">
+
+      <!-- NUMBERS -->
+      <div class="numbers">
+        <div class="sec-label">The Math — Lot 22</div>
+        <div class="num-row"><span>Buy</span><span class="val">$5,000</span></div>
+        <div class="num-row"><span>Materials</span><span class="val">$1,500</span></div>
+        <div class="num-row"><span>Your labor</span><span class="val">$0</span></div>
+        <div class="num-row"><span>Sell</span><span class="val">$15K–$18K</span></div>
+        <div class="num-row total"><span><strong>Net Profit</strong></span><span class="val">$8,500–$11,500</span></div>
+        <div class="both-banner">
+          <div class="lbl">Take both units</div>
+          <div class="val">$15K–$21K</div>
+        </div>
+      </div>
+
+      <!-- THE PLAY -->
+      <div class="play">
+        <div class="sec-label">The Play</div>
+        <div class="steps">
+          <div class="step"><div class="step-n">1</div><div class="step-t"><strong>Call today.</strong> Pick Lot 22, Lot 92, or both. 5-min call.</div></div>
+          <div class="step"><div class="step-n">2</div><div class="step-t"><strong>Walk the lots.</strong> Inspect yourself. Numbers don't work? Walk away — no deposit, no obligation.</div></div>
+          <div class="step"><div class="step-n">3</div><div class="step-t"><strong>Close in 14 days.</strong> Own the deed. No bank. No approval theater.</div></div>
+          <div class="step"><div class="step-n">4</div><div class="step-t"><strong>Fix the roof.</strong> 2–3 days. $1,500–$2,000 in materials.</div></div>
+          <div class="step"><div class="step-n">5</div><div class="step-t"><strong>List. Sell. Collect. Repeat.</strong> $15K–$18K asking. Seminole buyers move fast.</div></div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- NUMBERS -->
-    <div class="section-label">The Math</div>
-    <h2>The Numbers</h2>
-    <div class="numbers-section">
-      <div class="profit-block">
-        <h3>Lot 22 Scenario</h3>
-        <div class="profit-row"><span class="label">Buy</span><span class="value">$5,000</span></div>
-        <div class="profit-row"><span class="label">Fix roof (2–3 days + materials)</span><span class="value">$1,500</span></div>
-        <div class="profit-row"><span class="label">Your labor</span><span class="value">$0</span></div>
-        <div class="profit-row"><span class="label">Sell (Seminole County market)</span><span class="value">$15K–$18K</span></div>
-        <div class="profit-row total"><span class="label">Your Profit</span><span class="value">$8,500–$11,500</span></div>
+    <!-- WHY + RISK -->
+    <div class="bottom-row">
+      <div class="why">
+        <div class="sec-label">Why This Works for You</div>
+        <div class="why-item"><div class="why-dot"></div><div class="why-text"><strong>Your skill = instant equity.</strong> You know the cost. You know the timeline. The repair isn't a risk — it's a known quantity.</div></div>
+        <div class="why-item"><div class="why-dot"></div><div class="why-text"><strong>14-day close beats every bank deal.</strong> No 45-day approval. Own the deed, start work.</div></div>
+        <div class="why-item"><div class="why-dot"></div><div class="why-text"><strong>Seminole Co. = deep buyer pool.</strong> #1 school district in FL. Properties here sell fast.</div></div>
+        <div class="why-item"><div class="why-dot"></div><div class="why-text"><strong>Build the machine.</strong> Do this twice and you've funded your third deal.</div></div>
       </div>
-      <div class="profit-block" style="margin-top:24px;">
-        <h3>Lot 92 Scenario</h3>
-        <div class="profit-row"><span class="label">Buy</span><span class="value">$7,000</span></div>
-        <div class="profit-row"><span class="label">Fix roof (2–3 days + materials)</span><span class="value">$2,000</span></div>
-        <div class="profit-row"><span class="label">Your labor</span><span class="value">$0</span></div>
-        <div class="profit-row"><span class="label">Sell (Seminole County market)</span><span class="value">$16K–$19K</span></div>
-        <div class="profit-row total"><span class="label">Your Profit</span><span class="value">$7,000–$10,000</span></div>
-      </div>
-      <div class="both-total">
-        <div class="label">Take both units</div>
-        <div class="value">$15,500–$21,500</div>
-        <div class="sub">in your pocket · two weeks of work</div>
-      </div>
-    </div>
-
-    <!-- PILLARS -->
-    <div class="section-label">Why This Works</div>
-    <h2>Four Reasons the Math Holds</h2>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-icon">⚡</div>
-        <h3>14 Days. No Bank.</h3>
-        <p>No credit check. No appraisal. No underwriting. Owner financing closes in two weeks. You own the deed and start work while others are still filling out applications.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">🔨</div>
-        <h3>Your Skill = Instant Equity</h3>
-        <p>You already know how to fix the roof. You know the cost. You know the timeline. For you, the repair isn't a risk — it's a known quantity. That's the edge.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">🏫</div>
-        <h3>Hot Resale Market</h3>
-        <p>Seminole County is the #1 school district in Florida. Families and investors both want to be here. Your fixed home sells fast. Buyer pool is deep.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar-icon">🔄</div>
-        <h3>Repeat the Machine</h3>
-        <p>Fix one, sell it, pocket $8K. Use that to do two more. Do this four times and you're running your own portfolio — not someone else's schedule.</p>
+      <div class="risk">
+        <div class="sec-label">✅ Zero Obligation</div>
+        <p>Walk the lots first. Inspect the roof yourself. If the numbers don't check out on your own inspection — shake hands and walk away.</p>
+        <p style="margin-top:8px;"><strong>No deposit. No obligation. No hard feelings.</strong></p>
+        <p style="margin-top:12px; font-size:0.7rem; color:#555;">2545 Park Drive, Sanford FL 32771<br>Weekday showings only</p>
       </div>
     </div>
 
-    <!-- THE PLAY -->
-    <div class="play-section">
-      <div class="section-label">Execution</div>
-      <h2>The Play</h2>
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-text"><h4>Call today. Pick Lot 22, Lot 92, or both.</h4><p>5-minute call. No obligation. Ask for the deal sheet.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text"><h4>Walk the lots. Verify the numbers yourself.</h4><p>Inspect the roof. Estimate your fix cost. If it doesn't check out, walk away. No deposit. No hard feelings.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-text"><h4>Close in 14 days. Own the deed.</h4><p>Owner financing. No bank involved. You sign, it's yours.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-text"><h4>Fix the roof. 2–3 days of your time.</h4><p>Materials run $1,500–$2,000. Your labor costs you nothing.</p></div>
-      </div>
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-text"><h4>List. Sell. Collect. Repeat.</h4><p>$15K–$18K asking price. Seminole County buyers move fast.</p></div>
-      </div>
-    </div>
+  </div><!-- /body -->
 
-    <!-- RISK REVERSAL -->
-    <div class="risk-reversal">
-      <div class="risk-icon">✅</div>
-      <div class="risk-text">
-        <h3>Zero Obligation Walk-Through</h3>
-        <p>Walk the lots first. Inspect the roof yourself. If the numbers don't check out on your own inspection — shake hands and walk away. No deposit. No obligation. No hard feelings.</p>
-      </div>
-    </div>
+  <!-- MANTRA -->
+  <div class="mantra-strip">
+    <p>You own the problem. &nbsp;You own the fix. &nbsp;You own the profit.</p>
+    <p class="sub">You've built enough wealth for other people. Time to build your own.</p>
+  </div>
 
-    <!-- SIGN OFF -->
-    <div class="sign-off">
-      <div class="mantra">You own the problem.<br>You own the fix.<br>You own the profit.</div>
-      <p class="closer">You've built enough wealth for other people.<br>Time to build your own.</p>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-section">
-      <div class="cta-label">Ready to Move?</div>
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <div class="cta-left">
       <div class="cta-headline">Call Now. 5-Minute Call. No Obligation.</div>
       <div class="cta-sub">Ask for the deal sheet on Lot 22 or Lot 92. First mover picks their lot.</div>
-      <div class="cta-phones">
-        <a class="cta-phone" href="tel:9044951554">
-          <span class="contact-label">English</span>
-          <span class="contact-num">904-495-1554</span>
-          <span class="contact-name">Jay</span>
-        </a>
-        <a class="cta-phone" href="tel:9043357767">
-          <span class="contact-label">Español</span>
-          <span class="contact-num">904-335-7767</span>
-          <span class="contact-name">Sandra</span>
-        </a>
-      </div>
-      <div class="cta-address">2545 Park Drive, Sanford FL 32771 · Weekday showings only</div>
+      <div class="footer-addr">2545 Park Drive, Sanford FL 32771 · Owner-financed · As-is sale · No bank required</div>
     </div>
-
-    <div class="back-link"><a href="index.html">← Back to all flyers</a></div>
-
+    <div class="footer-phones">
+      <div class="footer-phone">
+        <div class="who">English — Jay</div>
+        <a href="tel:9044951554">904-495-1554</a>
+      </div>
+      <div class="footer-phone">
+        <div class="who">Español — Sandra</div>
+        <a href="tel:9043357767">904-335-7767</a>
+      </div>
+    </div>
   </div>
+
+</div><!-- /flyer -->
 </body>
 </html>
